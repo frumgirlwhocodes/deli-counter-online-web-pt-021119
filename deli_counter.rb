@@ -1,6 +1,7 @@
 # Write your code here.
-katz_deli=[]
-def line(array)
+katz_deli = []
+
+ def line(array)
   if array.length == 0
     puts "The line is currently empty."
   else
@@ -11,10 +12,19 @@ def line(array)
     puts "#{message}"
   end
 end
-def take_a_number(array,person)
-  array.push(person)
-  array.each_with_index do  |name, index|
-   "Welcome #{name}. You are number #{index +1} in line"
-end 
-end 
-  
+
+
+ def take_a_number(array, name)  
+  array.push(name)
+  position = array.index(name)
+    puts "Welcome, #{name}. You are number #{array.index(name)+1} in line."
+end
+
+
+ def now_serving(array)
+  if array.empty?
+  puts "There is nobody waiting to be served!"
+  elsif !array.empty?
+  puts "Currently serving #{array.shift}."
+  end
+end
